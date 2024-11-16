@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <script src="Currency.js" defer></script>
+    <style>
+      * {
+        padding: 0;
+        outline: none;
+        border: none;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background: #006d3a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      main {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+        display: flex;
+        width: 318px;
+        aspect-ratio: 1;
+        align-items: center;
+        flex-direction: column;
+        background: #00d176;
+        gap: 20px;
+      }
+      form {
+        gap: 20px;
+        width: 100%;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        border-bottom: 1px solid black;
+        font-size: 18px;
+        background: transparent;
+      }
+      input::placeholder {
+        color: rgb(61, 61, 61);
+      }
+      button,
+      select {
+        background: #008048;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 18px;
+      }
+      button {
+        font-weight: bold;
+      }
+      .selections {
+        display: flex;
+        justify-content: space-between;
+      }
+      .displayCurrency {
+        text-align: center;
+        background-color: #05824c;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      .AllColor-JS {
+        color: #00ff93;
+        text-shadow: 0 0 20px #0fff8f;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="pngwing.com.png" width="100px" alt="" />
+      <h2>Currency Converter</h2>
+
+      <form action="">
+        <label for="amount">Amounts</label>
+        <input type="number" value="1" id="amount" min="1" />
+        <div class="selections">
+          <select id="select1"></select>
+          <select id="select2"></select>
+        </div>
+
+        <button type="submit">Convert</button>
+        <div class="displayCurrency">
+          <span id="input">no data</span>
+          <span id="left-select"></span>
+
+          <span id="finalValue"></span>
+          <span id="right-select"></span>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
