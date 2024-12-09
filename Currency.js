@@ -11,6 +11,7 @@ let rightSelectDisplay = FinalValueDisplay.nextElementSibling;
 
 let AllData = {
   InputData: 1,
+  leftCalData:1,
   leftData: "USD",
   rightCalData: 84.4553,
   rightData: "INR",
@@ -51,6 +52,7 @@ fetchingData();
 
 selection1.addEventListener("change", (e) => {
   AllData.leftData = e.target.value;
+  AllData.leftCalData = e.target.options[e.target.selectedIndex].id;
 });
 
 selection2.addEventListener("change", (e) => {
@@ -63,7 +65,7 @@ button.addEventListener("click", async (e) => {
   inputValueDisplay.innerText = AllData.InputData;
   leftSelectDisplay.innerHTML = AllData.leftData + " = ";
   rightSelectDisplay.innerHTML = AllData.rightData;
-  let CalculatedData = AllData.InputData * AllData.rightCalData;
+  let CalculatedData = (AllData.InputData / AllData.leftCalData ) * AllData.rightCalData;
   FinalValueDisplay.innerHTML = CalculatedData.toFixed(2);
   console.log(AllData.rightCalData);
 
